@@ -1,6 +1,6 @@
 module UsersHelper
   def user_params
-    params.permit(:email, :password)
+    params.require(:user).permit(:email, :password)
   end
 
   def generate_refresh_token

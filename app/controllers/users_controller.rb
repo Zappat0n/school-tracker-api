@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   skip_before_action :doorkeeper_authorize!, only: %i[create]
 
   def create
-    user = User.new(email: user_params[:email], password: user_params[:password])
+    user = User.new(email: user_params[:email], password: params[:password])
+    p user.password
 
     client_app = Doorkeeper::Application.find_by(uid: params[:client_id])
 
