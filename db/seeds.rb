@@ -9,3 +9,10 @@
 if Doorkeeper::Application.count.zero?
   Doorkeeper::Application.create(name: "Browser client", redirect_uri: "", scopes: "")
 end
+
+if Classroom.count.zero?
+  Classroom.create(name: 'Snails');
+  Classroom.create(name: 'Roots');
+  Classroom.create(name: 'Seeds');
+  Classroom.create(name: 'Volcanoes');
+end
