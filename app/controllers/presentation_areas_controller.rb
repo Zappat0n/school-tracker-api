@@ -1,0 +1,2 @@
+class PresentationAreasController < ApplicationController
+end
