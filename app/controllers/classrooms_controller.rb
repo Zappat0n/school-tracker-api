@@ -1,6 +1,4 @@
 class ClassroomsController < ApplicationController
-  before_action :authenticate_user!
-
   # GET /classrooms
   def index
     @classrooms = Classroom.all
