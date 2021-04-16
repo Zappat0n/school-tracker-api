@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_15_155856) do
+ActiveRecord::Schema.define(version: 2021_04_16_150757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(version: 2021_04_15_155856) do
     t.index ["presentation_area_id"], name: "index_presentation_subareas_on_presentation_area_id"
   end
 
+  create_table "presentations", force: :cascade do |t|
+    t.string "name"
+    t.bigint "presentation_subarea_id", null: false
+    t.float "year"
+    t.integer "priority"
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["presentation_subarea_id"], name: "index_presentations_on_presentation_subarea_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.date "birth_date"
@@ -88,5 +99,6 @@ ActiveRecord::Schema.define(version: 2021_04_15_155856) do
 
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "presentation_subareas", "presentation_areas"
+  add_foreign_key "presentations", "presentation_subareas"
   add_foreign_key "students", "classrooms"
 end
