@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :classrooms
 
   get '/students', to: 'students#index'
+  get '/presentation_areas', to: 'presentation_areas#index'
+  get '/presentation_areas/:id', to: 'presentation_areas#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

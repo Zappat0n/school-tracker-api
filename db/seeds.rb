@@ -11,63 +11,236 @@ if Doorkeeper::Application.count.zero?
 end
 
 if Classroom.count.zero?
-  Classroom.create(name: 'Snails');
-  Classroom.create(name: 'Roots');
-  Classroom.create(name: 'Seeds');
-  Classroom.create(name: 'Volcanoes');
+  Classroom.create(name: 'Snails')
+  Classroom.create(name: 'Roots')
+  Classroom.create(name: 'Seeds')
+  Classroom.create(name: 'Volcanoes')
 end
 
 if Student.count.zero?
-  snails = Classroom.find(1);
-  roots = Classroom.find(2);
-  seeds = Classroom.find(3);
-  volcanoes = Classroom.find(4);
-  Student.create(name: 'Courtois', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'Lunin', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'Carvajal', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'E. Militao', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'Sergio Ramos', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'R. Varane', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'Nacho', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'marcelo', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'Odriozola', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'F. Mendy', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'Kroos', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'Modric', birth_date: '2019-01-01', classroom: snails);
-  Student.create(name: 'Marc-André ter Stegen', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Sergiño Dest', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Gerard Piqué', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Ronald Araujo', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Clément Lenglet', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Jordi Alba', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Sergi Roberto', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Samuel Umtiti', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Junior Firpo', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Óscar Mingueza', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Pedri', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Lionel Messi', birth_date: '2017-01-01', classroom: roots);
-  Student.create(name: 'Jan Oblak', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'José Giménez', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Stefan Savic', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Felipe', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Kieran Trippier', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Koke', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Saúl Ñíguez', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Marcos Llorente', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Yannick Carrasco', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'João Félix', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Luis Suárez', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Moussa Dembele', birth_date: '2017-01-01', classroom: seeds);
-  Student.create(name: 'Adrián González', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Joris Gnagnon', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Sergi Gómez', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Aleix Vidal', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Jesús Navas', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Nemanja Gudelj', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Ivan Rakitic', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Suso', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Franco Vázquez', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Óliver Torres', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Luuk de Jong', birth_date: '2013-01-01', classroom: volcanoes);
-  Student.create(name: 'Youssef En-Nesyri', birth_date: '2013-01-01', classroom: volcanoes);
+  snails = Classroom.find(1)
+  roots = Classroom.find(2)
+  seeds = Classroom.find(3)
+  volcanoes = Classroom.find(4)
+  Student.create(name: 'Courtois', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'Lunin', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'Carvajal', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'E. Militao', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'Sergio Ramos', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'R. Varane', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'Nacho', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'marcelo', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'Odriozola', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'F. Mendy', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'Kroos', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'Modric', birth_date: '2019-01-01', classroom: snails)
+  Student.create(name: 'Marc-André ter Stegen', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Sergiño Dest', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Gerard Piqué', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Ronald Araujo', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Clément Lenglet', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Jordi Alba', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Sergi Roberto', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Samuel Umtiti', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Junior Firpo', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Óscar Mingueza', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Pedri', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Lionel Messi', birth_date: '2017-01-01', classroom: roots)
+  Student.create(name: 'Jan Oblak', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'José Giménez', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Stefan Savic', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Felipe', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Kieran Trippier', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Koke', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Saúl Ñíguez', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Marcos Llorente', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Yannick Carrasco', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'João Félix', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Luis Suárez', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Moussa Dembele', birth_date: '2017-01-01', classroom: seeds)
+  Student.create(name: 'Adrián González', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Joris Gnagnon', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Sergi Gómez', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Aleix Vidal', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Jesús Navas', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Nemanja Gudelj', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Ivan Rakitic', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Suso', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Franco Vázquez', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Óliver Torres', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Luuk de Jong', birth_date: '2013-01-01', classroom: volcanoes)
+  Student.create(name: 'Youssef En-Nesyri', birth_date: '2013-01-01', classroom: volcanoes)
 end
+
+if PresentationArea.count.zero?
+  PresentationArea.create(name: 'Practical life', nombre: 'Vida práctica')
+  PresentationArea.create(name: 'Sensorial', nombre: 'Sensorial')
+  PresentationArea.create(name: 'Language', nombre: 'Lenguaje')
+  PresentationArea.create(name: 'Mathematics', nombre: 'Matemáticas')
+  PresentationArea.create(name: 'Geography', nombre: 'Geografía')
+  PresentationArea.create(name: 'Biology', nombre: 'Biología')
+  PresentationArea.create(name: 'Geometry', nombre: 'Geometría')
+  PresentationArea.create(name: 'History', nombre: 'Historia')
+  PresentationArea.create(name: 'Psycho-sensorimotor', nombre: 'Psico-sensorio-motor')
+  PresentationArea.create(name: 'Cosmic stories and experiments', nombre: 'Historias cósmicas y experimentos')
+  PresentationArea.create(name: 'Music', nombre: 'Música')
+  PresentationArea.create(name: 'Creative arts & Culture', nombre: 'Arte y cultura')
+  PresentationArea.create(name: 'Spanish', nombre: 'Español')
+  PresentationArea.create(name: 'Cultural', nombre: 'Cultural')
+  PresentationArea.create(name: 'Physical Education', nombre: 'Educacion Fisica')
+  PresentationArea.create(name: 'Afternoon activities', nombre: 'Actidades de la tarde')
+  PresentationArea.create(name: 'Another areas / materials', nombre: 'Otras áreas / materiales')
+  PresentationArea.create(name: 'Led activities', nombre: 'Actividades guiadas')
+  PresentationArea.create(name: 'PSED', nombre: 'Desarrollo personal y emocional')
+  PresentationArea.create(name: 'Free activities', nombre: 'Actividades libres')
+end
+
+if PresentationSubarea.count.zero?
+  prArea1 = PresentationArea.find(1)
+  prArea2 = PresentationArea.find(2)
+  prArea3 = PresentationArea.find(3)
+  prArea4 = PresentationArea.find(4)
+  prArea5 = PresentationArea.find(5)
+  prArea6 = PresentationArea.find(6)
+  prArea7 = PresentationArea.find(7)
+  prArea8 = PresentationArea.find(8)
+  prArea9 = PresentationArea.find(9)
+  prArea10 = PresentationArea.find(10)
+  prArea11 = PresentationArea.find(11)
+  prArea12 = PresentationArea.find(12)
+  prArea13 = PresentationArea.find(13)
+  prArea14 = PresentationArea.find(14)
+  prArea15 = PresentationArea.find(15)
+  prArea16 = PresentationArea.find(16)
+  prArea17 = PresentationArea.find(17)
+  prArea18 = PresentationArea.find(18)
+  prArea19 = PresentationArea.find(19)
+  prArea20 = PresentationArea.find(20)
+
+  PresentationSubarea.create(name:'Preliminary exercises', presentation_area: prArea1, nombre: 'Ejercicios preliminares')
+  PresentationSubarea.create(name:'Care of the indoor environment', presentation_area: prArea1, nombre: 'Cuidado del ambiente interior')
+  PresentationSubarea.create(name:'Care of the outside environment', presentation_area: prArea1, nombre: 'Cuidado del ambiente exterior')
+  PresentationSubarea.create(name:'Person care', presentation_area: prArea1, nombre: 'Cuidado de la persona')
+  PresentationSubarea.create(name:'Grace and courtesy Social relationships', presentation_area: prArea1, nombre: 'Gracia y cortesía. Relaciones sociales')
+  PresentationSubarea.create(name:'Movement', presentation_area: prArea1, nombre: 'Movimiento ')
+  PresentationSubarea.create(name:'Visual sense', presentation_area: prArea2, nombre: 'Sentido visual ')
+  PresentationSubarea.create(name:'Touch sense', presentation_area: prArea2, nombre: 'Sentido táctil')
+  PresentationSubarea.create(name:'Auditory sense', presentation_area: prArea2, nombre: 'Sentido auditivo')
+  PresentationSubarea.create(name:'Olfactory sense', presentation_area: prArea2, nombre: 'Sentido olfativo ')
+  PresentationSubarea.create(name:'Taste sense', presentation_area: prArea2, nombre: 'Sentido gustativo')
+  PresentationSubarea.create(name:'Stereognostic activities', presentation_area: prArea2, nombre: 'Actividades estereognósticas ')
+  PresentationSubarea.create(name:'Materials that do not isolate a single quality', presentation_area: prArea2, nombre: 'Materiales que no aíslan una sola cualidad')
+  PresentationSubarea.create(name:'Geografy', presentation_area: prArea14, nombre: 'Geografía')
+  PresentationSubarea.create(name:'Spoken language', presentation_area: prArea3, nombre: 'Lenguaje hablado')
+  PresentationSubarea.create(name:'Vocabulary enrichment', presentation_area: prArea3, nombre: 'Enriquecimiento de vocabulario')
+  PresentationSubarea.create(name:'Written language', presentation_area: prArea3, nombre: 'Lenguaje escrito')
+  PresentationSubarea.create(name:'Reading', presentation_area: prArea3, nombre: 'Lectura')
+  PresentationSubarea.create(name:'Classified reading. Reading signs', presentation_area: prArea3, nombre: 'Lectura clasificada. Letreros de lectura')
+  PresentationSubarea.create(name:'Word function', presentation_area: prArea3, nombre: 'Función de las palabras ')
+  PresentationSubarea.create(name:'Word Study', presentation_area: prArea3, nombre: 'Estudio de la palabra')
+  PresentationSubarea.create(name:'Reading Analysis', presentation_area: prArea3, nombre: 'Análisis de la lectura')
+  PresentationSubarea.create(name:'Interpretive reading', presentation_area: prArea3, nombre: 'Lectura interpretativa')
+  PresentationSubarea.create(name:'History', presentation_area: prArea14, nombre: 'Historia')
+  PresentationSubarea.create(name:'Numbers 1 to 10', presentation_area: prArea4, nombre: 'Números del 1 al 10')
+  PresentationSubarea.create(name:'Decimal system', presentation_area: prArea4, nombre: 'Sistema decimal')
+  PresentationSubarea.create(name:'Continued counting', presentation_area: prArea4, nombre: 'Continuación de contar')
+  PresentationSubarea.create(name:'Table exploration and memorization', presentation_area: prArea4, nombre: 'Exploración y memorización de las tablas')
+  PresentationSubarea.create(name:'Passage to abstraction', presentation_area: prArea4, nombre: 'Pasaje a la abstracción')
+  PresentationSubarea.create(name:'Fractions', presentation_area: prArea4, nombre: 'Las fracciones')
+  PresentationSubarea.create(name:'Physical Education', presentation_area: prArea15, nombre: 'Educacion Fisica')
+  PresentationSubarea.create(name:'Zoology and Botanics', presentation_area: prArea14, nombre: 'Zoologia y Botanica')
+  PresentationSubarea.create(name:'Experiments (Science)', presentation_area: prArea14, nombre: 'Experimentos (ciencias)')
+  PresentationSubarea.create(name:'Ars', presentation_area: prArea14, nombre: 'Arte')
+  PresentationSubarea.create(name:'Introduction to language', presentation_area: prArea3, nombre: 'Introducción al lenguaje')
+  PresentationSubarea.create(name:'Study of the word', presentation_area: prArea3, nombre: 'Estudio de la palabra')
+  PresentationSubarea.create(name:'Parts of a sentence. Article', presentation_area: prArea3, nombre: 'Partes de la oración. El Artículo')
+  PresentationSubarea.create(name:'Parts of a sentence. Adjective', presentation_area: prArea3, nombre: 'Partes de la oración. El Adjetivo')
+  PresentationSubarea.create(name:'Parts of a sentence. Verb', presentation_area: prArea3, nombre: 'Partes de la oración. El Verbo')
+  PresentationSubarea.create(name:'Parts of a sentence. Preposition', presentation_area: prArea3, nombre: 'Partes de la oración. La Preposición')
+  PresentationSubarea.create(name:'Parts of a sentence. Adverb', presentation_area: prArea3, nombre: 'Partes de la oración. El adverbio')
+  PresentationSubarea.create(name:'Parts of a sentence. Pronoun', presentation_area: prArea3, nombre: 'Partes de la oración. El Pronombre')
+  PresentationSubarea.create(name:'Parts of a sentence. Interjection', presentation_area: prArea3, nombre: 'Partes de la oración. La Interjección')
+  PresentationSubarea.create(name:'Sentence analysis. Simple sentence', presentation_area: prArea3, nombre: 'Análisis de la oración. Oración simple')
+  PresentationSubarea.create(name:'Sentence analysis. Clause', presentation_area: prArea3, nombre: 'Análisis de la oración. Claúsula')
+  PresentationSubarea.create(name:'Spelling', presentation_area: prArea3, nombre: 'Ortografía')
+  PresentationSubarea.create(name:'Reading comprehension', presentation_area: prArea3, nombre: 'Comprensión lectora')
+  PresentationSubarea.create(name:'Text types', presentation_area: prArea3, nombre: 'Tipos de texto')
+  PresentationSubarea.create(name:'Written expression', presentation_area: prArea3, nombre: 'Expresión escrita')
+  PresentationSubarea.create(name:'Oral expression', presentation_area: prArea3, nombre: 'Expresión oral')
+  PresentationSubarea.create(name:'Introduction to mathematics', presentation_area: prArea4, nombre: 'Introducción a las matemáticas')
+  PresentationSubarea.create(name:'Basic operations', presentation_area: prArea4, nombre: 'Operaciones básicas')
+  PresentationSubarea.create(name:'Multiplication', presentation_area: prArea4, nombre: 'Multiplicación')
+  PresentationSubarea.create(name:'Division', presentation_area: prArea4, nombre: 'División')
+  PresentationSubarea.create(name:'Fractions', presentation_area: prArea4, nombre: 'Fracciones')
+  PresentationSubarea.create(name:'Properties of Mathematics', presentation_area: prArea4, nombre: 'Propiedades de las Matemáticas')
+  PresentationSubarea.create(name:'Decimals', presentation_area: prArea4, nombre: 'Decimales')
+  PresentationSubarea.create(name:'Powers of Numbers', presentation_area: prArea4, nombre: 'Potencias de Números')
+  PresentationSubarea.create(name:'Introduction to Algebra', presentation_area: prArea4, nombre: 'Introducción al álgebra')
+  PresentationSubarea.create(name:'Algebra', presentation_area: prArea4, nombre: 'Álgebra')
+  PresentationSubarea.create(name:'Square root', presentation_area: prArea4, nombre: 'Raíz cuadrada')
+  PresentationSubarea.create(name:'Cubic root', presentation_area: prArea4, nombre: 'Raíz cúbica')
+  PresentationSubarea.create(name:'Measurement', presentation_area: prArea4, nombre: 'Medición')
+  PresentationSubarea.create(name:'Problems', presentation_area: prArea4, nombre: 'Problemas')
+  PresentationSubarea.create(name:'Plants', presentation_area: prArea6, nombre: 'Plantas')
+  PresentationSubarea.create(name:'Parts of the plants', presentation_area: prArea6, nombre: 'Partes de las plantas')
+  PresentationSubarea.create(name:'Animal knowledge', presentation_area: prArea6, nombre: 'Conocimiento de los animales')
+  PresentationSubarea.create(name:'Vertebrate animals', presentation_area: prArea6, nombre: 'Animales vertebrados')
+  PresentationSubarea.create(name:'Animal classification', presentation_area: prArea6, nombre: 'Clasificación de los animales')
+  PresentationSubarea.create(name:'Classification of plants', presentation_area: prArea6, nombre: 'Clasificación de las plantas')
+  PresentationSubarea.create(name:'The human body', presentation_area: prArea6, nombre: 'El cuerpo humano')
+  PresentationSubarea.create(name:'Ecology', presentation_area: prArea6, nombre: 'Ecología')
+  PresentationSubarea.create(name:'Introduction to geometry', presentation_area: prArea5, nombre: 'Introducción')
+  PresentationSubarea.create(name:'Lines', presentation_area: prArea5, nombre: 'Líneas')
+  PresentationSubarea.create(name:'Angles', presentation_area: prArea5, nombre: 'Ángulos')
+  PresentationSubarea.create(name:'Polygons', presentation_area: prArea5, nombre: 'Polígonos')
+  PresentationSubarea.create(name:'The circle', presentation_area: prArea5, nombre: 'El círculo')
+  PresentationSubarea.create(name:'Congruence, Similarity and Equivalence', presentation_area: prArea5, nombre: 'Congruencia, Similitud y Equivalencia')
+  PresentationSubarea.create(name:'Theorems', presentation_area: prArea5, nombre: 'Teoremas')
+  PresentationSubarea.create(name:'Area of ​​flat figures', presentation_area: prArea5, nombre: 'Área de Figuras planas')
+  PresentationSubarea.create(name:'Solids', presentation_area: prArea5, nombre: 'Sólidos')
+  PresentationSubarea.create(name:'Volume', presentation_area: prArea5, nombre: 'Volumen')
+  PresentationSubarea.create(name:'Polyhedra', presentation_area: prArea5, nombre: 'Poliedros')
+  PresentationSubarea.create(name:'Introduction to history', presentation_area: prArea8, nombre: 'Introducción')
+  PresentationSubarea.create(name:'Prehistory', presentation_area: prArea8, nombre: 'Prehistoria')
+  PresentationSubarea.create(name:'The Timelines of Human Beings', presentation_area: prArea8, nombre: 'Las Líneas del Tiempo de los Seres Humanos')
+  PresentationSubarea.create(name:'Time measurement', presentation_area: prArea8, nombre: 'Medición del tiempo')
+  PresentationSubarea.create(name:'Study of civilizations', presentation_area: prArea8, nombre: 'Estudio de las civilizaciones')
+  PresentationSubarea.create(name:'Introduction to language', presentation_area: prArea13, nombre: 'Introducción al lenguaje')
+  PresentationSubarea.create(name:'Word Study', presentation_area: prArea13, nombre: 'Estudio de la palabra')
+  PresentationSubarea.create(name:'Parts of the sentence. Article', presentation_area: prArea13, nombre: 'Partes de la oración. El Artículo')
+  PresentationSubarea.create(name:'Parts of the sentence. The Adjective', presentation_area: prArea13, nombre: 'Partes de la oración. El Adjetivo')
+  PresentationSubarea.create(name:'Parts of the sentence. The verb', presentation_area: prArea13, nombre: 'Partes de la oración. El Verbo')
+  PresentationSubarea.create(name:'Parts of the sentence. The preposition', presentation_area: prArea13, nombre: 'Partes de la oración. La Preposición')
+  PresentationSubarea.create(name:'Parts of the sentence. The adverb', presentation_area: prArea13, nombre: 'Partes de la oración. El adverbio')
+  PresentationSubarea.create(name:'Parts of the sentence. The pronoun', presentation_area: prArea13, nombre: 'Partes de la oración. El Pronombre')
+  PresentationSubarea.create(name:'Parts of the sentence. The interjection', presentation_area: prArea13, nombre: 'Partes de la oración. La Interjección')
+  PresentationSubarea.create(name:'Sentence Analysis. Simple Sentence', presentation_area: prArea13, nombre: 'Análisis de la oración. Oración simple')
+  PresentationSubarea.create(name:'Sentence Analysis. Clause', presentation_area: prArea13, nombre: 'Análisis de la oración. Claúsula')
+  PresentationSubarea.create(name:'Orthography', presentation_area: prArea13, nombre: 'Ortografía')
+  PresentationSubarea.create(name:'Reading comprehension', presentation_area: prArea13, nombre: 'Comprensión lectora')
+  PresentationSubarea.create(name:'Text types', presentation_area: prArea13, nombre: 'Tipos de texto')
+  PresentationSubarea.create(name:'Written expression', presentation_area: prArea13, nombre: 'Expresión escrita')
+  PresentationSubarea.create(name:'Oral expression', presentation_area: prArea13, nombre: 'Expresión oral')
+  PresentationSubarea.create(name:'Furniture movement', presentation_area: prArea1, nombre: 'Movimiento de los muebles')
+  PresentationSubarea.create(name:'Kitchen', presentation_area: prArea1, nombre: 'Cocina')
+  PresentationSubarea.create(name:'Music', presentation_area: prArea11, nombre: 'Música')
+  PresentationSubarea.create(name:'Ars', presentation_area: prArea12, nombre: 'Arte')
+  PresentationSubarea.create(name:'Patterns', presentation_area: prArea7, nombre: 'Patrones')
+  PresentationSubarea.create(name:'Kitchen', presentation_area: prArea16, nombre: 'Cocina')
+  PresentationSubarea.create(name:'Eye-hand coordination', presentation_area: prArea9, nombre: 'Coordinación mano-ojo')
+  PresentationSubarea.create(name:'Artistic techniques', presentation_area: prArea16, nombre: 'Técnicas artísticas')
+  PresentationSubarea.create(name:'Additional activities', presentation_area: prArea4, nombre: 'Actividades extra')
+  PresentationSubarea.create(name:'Development of equilibrium', presentation_area: prArea9, nombre: 'Desarrollo del equilibrio')
+  PresentationSubarea.create(name:'Stereognostic activities', presentation_area: prArea9, nombre: 'Actividades estereognósticas)')
+  PresentationSubarea.create(name:'Social development', presentation_area: prArea17, nombre: 'Desarrollo social')
+  PresentationSubarea.create(name:'Psychic abilities', presentation_area: prArea9, nombre: 'Abilidades psíquicas')
+  PresentationSubarea.create(name:'Ars', presentation_area: prArea1, nombre: 'Arte')
+  PresentationSubarea.create(name:'Observations', presentation_area: prArea1, nombre: 'Observaciones')
+  PresentationSubarea.create(name:'Observations', presentation_area: prArea3, nombre: 'Observaciones')
+  PresentationSubarea.create(name:'Self confident', presentation_area: prArea19, nombre: 'Autoconfianza')
+  PresentationSubarea.create(name:'Managing feelings and behaviour', presentation_area: prArea19, nombre: 'Gestión de emociones y comportamiento')
+  PresentationSubarea.create(name:'Understanding the world', presentation_area: prArea18, nombre: 'Comprendiendo el mundo')
+  PresentationSubarea.create(name:'Golden time', presentation_area: prArea20, nombre: 'Tiempo libre')
+end
+
+
