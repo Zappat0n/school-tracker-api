@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get '/presentation_areas/:id', to: 'presentation_areas#show'
   get '/presentation_subareas', to: 'presentation_subareas#index'
   get '/presentation_subareas/:id', to: 'presentation_subareas#show'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/classrooms/:id/scores', to: 'events#index'
+  get '/students/:id/scores', to: 'events#show'
 end
