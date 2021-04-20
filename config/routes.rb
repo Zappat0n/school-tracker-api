@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get '/presentation_subareas/:id', to: 'presentation_subareas#show'
   get '/classrooms/:id/scores', to: 'events#index'
   get '/students/:id/scores', to: 'events#show'
+  post '/events', to: 'events#create'
+  put '/events/:id', to: 'events#update'
 end

@@ -22,4 +22,24 @@ class EventsController < ApplicationController
     @events = Event.where('student=?', params[:id]).includes(:presentation)
     render json: @events
   end
+
+  # POST /events
+  def create
+    @event = Event.new(event_params)
+
+    if @event.save
+      render json: @event, status: :created
+    else
+      render json: @event.errors, status: :unprocessable_entity
+    end
+  end
+
+  # PUT /events
+  def update
+    if @event.update(event_params)
+      render json: @event
+    else
+      render json: @event.errors, status: :unprocessable_entity
+    end
+  end
 end
