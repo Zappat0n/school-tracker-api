@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(email: user_params[:email], password: params[:password])
-    p user.password
 
     client_app = Doorkeeper::Application.find_by(uid: params[:client_id])
 
