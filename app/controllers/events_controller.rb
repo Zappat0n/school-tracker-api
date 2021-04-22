@@ -36,10 +36,12 @@ class EventsController < ApplicationController
 
   # PUT /events
   def update
-    if @event.update(event_params)
-      render json: @event
+    event = Event.find(params[:id])
+    p @event
+    if event.update(event_params)
+      render json: event
     else
-      render json: @event.errors, status: :unprocessable_entity
+      render json: event.errors, status: :unprocessable_entity
     end
   end
 end
