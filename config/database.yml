@@ -81,9 +81,7 @@ test:
 #
 production:
   <<: *default
-database: d2cn75753a7cj6
-username: ecrbykmtwdpsuq
-password: 3fb324ab850caab512b46e194a74a7496fb85be50eba00cafb34bcf0eefee579
-#  database: school_tracker_api_production
-#  username: school_tracker_api
-#  password: <%= ENV['SCHOOL_TRACKER_API_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: school_tracker_api_production
+  username:
+  password: <%= ENV['SCHOOL_TRACKER_API_DATABASE_PASSWORD'] %>
