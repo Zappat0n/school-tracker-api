@@ -83,5 +83,5 @@ production:
   <<: *default
   adapter: postgresql
   database: school_tracker_api_production
-  username:
+  username: school_tracker_api
   password: <%= ENV['SCHOOL_TRACKER_API_DATABASE_PASSWORD'] %>
