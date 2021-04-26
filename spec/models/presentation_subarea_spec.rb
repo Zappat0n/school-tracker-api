@@ -7,7 +7,8 @@ RSpec.describe PresentationSubarea, type: :model do
       PresentationSubarea.create(name: 'Addition', nombre: 'Sumar', presentation_area: presentation_area)
     end
     it 'is valid with valid attributes' do
-      expect(PresentationSubarea.create(name: 'Addition', nombre: 'Sumar', presentation_area: presentation_area)).to be_valid
+      expect(PresentationSubarea.create(name: 'Addition', nombre: 'Sumar',
+                                        presentation_area: presentation_area)).to be_valid
     end
 
     it 'is not valid without name' do
