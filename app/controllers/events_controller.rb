@@ -19,7 +19,8 @@ class EventsController < ApplicationController
   # GET /students/:id/scores
   def show
     @student = Student.find(params[:id])
-    @events = Event.where('student=?', params[:id]).includes(:presentation)
+    @events = Event.joins(:presentation).select('events.id, events.date, presentations.name, events.score').order(:date)
+      .where('student_id=?', params[:id])
     render json: @events
   end
 
