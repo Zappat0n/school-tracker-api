@@ -1,27 +1,38 @@
 class UsersController < ApplicationController
-  include UsersHelper
+  before_action :authorize_request, except: :create
+  before_action :find_user, except: %i[create index]
 
-  skip_before_action :doorkeeper_authorize!, only: %i[create]
+  # GET /users
+  def index
+    @users = User.all
+    render json: @users, status: :ok
+  end
 
+  # GET /users/{username}
+  def show
+    render json: @user, status: :ok
+  end
+
+  # POST /users
   def create
-    user = User.new(email: user_params[:email], password: params[:password])
-
-    client_app = Doorkeeper::Application.find_by(uid: params[:client_id])
-
-    return render(json: { error: 'Invalid client ID' }, status: 403) unless client_app
-
-    if user.save
-      access_token = Doorkeeper::AccessToken.create(
-        resource_owner_id: user.id,
-        application_id: client_app.id,
-        refresh_token: generate_refresh_token,
-        expires_in: Doorkeeper.configuration.access_token_expires_in.to_i,
-        scopes: ''
-      )
-
-      render_user(user, access_token)
+    @user = User.new(user_params)
+    if @user.save
+      render json: @user, status: :created
     else
-      render(json: { error: user.errors.full_messages }, status: 422)
+      render json: { errors: @user.errors.full_messages },
+             status: :unprocessable_entity
     end
+  end
+
+  # PUT /users/{username}
+  def update
+    return unless @user.update(user_params)
+
+    render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+  end
+
+  # DELETE /users/{username}
+  def destroy
+    @user.destroy
   end
 end

@@ -1,9 +1,18 @@
 class ApplicationController < ActionController::API
-  before_action :doorkeeper_authorize!
+  def not_found
+    render json: { error: 'not_found' }
+  end
 
-  private
-
-  def current_user
-    @current_user ||= User.find_by(id: doorkeeper_token[:resource_owner_id])
+  def authorize_request
+    header = request.headers['Authorization']
+    header = header.split(' ').last if header
+    begin
+      @decoded = JsonWebToken.decode(header)
+      @current_user = User.find(@decoded[:user_id])
+    rescue ActiveRecord::RecordNotFound => e
+      render json: { errors: e.message }, status: :unauthorized
+    rescue JWT::DecodeError => e
+      render json: { errors: e.message }, status: :unauthorized
+    end
   end
 end
