@@ -3,8 +3,8 @@ require 'json'
 class EventsController < ApplicationController
   include EventsHelper
 
-  # GET /classrooms/:id/scores
-  def index
+  # GET /events/:id
+  def show
     years = get_years(params[:id])
     students = Student.where('classroom_id=?', params[:id])
     presentations = Presentation.where('year > ? AND year <= ?', years[0], years[1])
@@ -14,14 +14,6 @@ class EventsController < ApplicationController
     )
     result = { students: students, presentations: presentations, events: events }
     render json: result.to_json
-  end
-
-  # GET /students/:id/scores
-  def show
-    @student = Student.find(params[:id])
-    @events = Event.joins(:presentation).select('events.id, events.date, presentations.name, events.score').order(:date)
-      .where('student_id=?', params[:id])
-    render json: @events
   end
 
   # POST /events

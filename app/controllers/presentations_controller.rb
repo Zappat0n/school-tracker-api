@@ -1,2 +1,0 @@
-class PresentationsController < ApplicationController
-end
