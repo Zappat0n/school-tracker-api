@@ -6,4 +6,8 @@ class Presentation < ApplicationRecord
   validates :nombre, presence: true
   validates :presentation_subarea_id, presence: true
   validates :year, presence: true
+
+  scope :presentations_per_subarea, lambda {
+                                      joins(:groups_presentations).where('groups_presentations.group_id IS NOT NULL')
+                                    }
 end

@@ -7,8 +7,7 @@ class PresentationSubareasController < ApplicationController
 
   # GET /presentation_subareas/1
   def show
-    @presentation_subarea = PresentationSubarea.find(params[:id])
-    @presentations = Presentation.where(presentation_subarea: @presentation_subarea)
+    @presentations = Presentation.where(presentation_subarea_id: params[:id])
     render json: @presentations
   end
 end

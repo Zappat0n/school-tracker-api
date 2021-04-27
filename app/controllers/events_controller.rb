@@ -5,14 +5,7 @@ class EventsController < ApplicationController
 
   # GET /events/:id
   def show
-    years = get_years(params[:id])
-    students = Student.where('classroom_id=?', params[:id])
-    presentations = Presentation.where('year > ? AND year <= ?', years[0], years[1])
-    events = Event.joins(:student).joins(:presentation).where(
-      'students.classroom_id=? AND presentations.year>? AND presentations.year<=?',
-      params[:id], years[0], years[1]
-    )
-    result = { students: students, presentations: presentations, events: events }
+    result = build_events_for_classroom(params[:id])
     render json: result.to_json
   end
 

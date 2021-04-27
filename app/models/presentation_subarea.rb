@@ -5,6 +5,4 @@ class PresentationSubarea < ApplicationRecord
   validates :name, presence: true
   validates :nombre, presence: true
   validates :presentation_area_id, presence: true
-
-
 end
