@@ -6,6 +6,6 @@ module UsersHelper
   end
 
   def user_params
-    params.permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
