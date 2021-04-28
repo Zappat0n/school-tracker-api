@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Student, type: :model do
-  require 'rails_helper'
   describe 'Student model' do
     let(:classroom) { Classroom.create(name: 'First') }
     it 'is valid with valid attributes' do
