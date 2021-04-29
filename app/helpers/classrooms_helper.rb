@@ -4,6 +4,6 @@ module ClassroomsHelper
   end
 
   def classroom_params
-    params.require(:classroom).permit(:name)
+    params.permit(:id, :name)
   end
 end

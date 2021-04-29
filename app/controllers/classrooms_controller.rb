@@ -10,7 +10,7 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/1
   def show
-    @students = Student.where(@classroom)
+    @students = Student.for_classroom(classroom_params[:id])
     render json: @students
   end
 
