@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   # GET /events/:id
   def show
-    result = build_events_for_classroom(params[:id])
+    result = build_events_for_classroom(event_params[:id])
     render json: result.to_json
   end
 
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 
   # PUT /events
   def update
-    event = Event.find(params[:id])
+    event = Event.find(event_params[:id])
     p @event
     if event.update(event_params)
       render json: event

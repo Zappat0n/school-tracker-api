@@ -1,4 +1,7 @@
 class ClassroomsController < ApplicationController
+  include ClassroomsHelper
+  include StudentsHelper
+
   # GET /classrooms
   def index
     @classrooms = Classroom.all
@@ -7,7 +10,7 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/1
   def show
-    @students = Student.where(classroom_id: params[:id])
+    @students = Student.where(@classroom)
     render json: @students
   end
 
@@ -34,17 +37,5 @@ class ClassroomsController < ApplicationController
   # DELETE /classrooms/1
   def destroy
     @classroom.destroy
-  end
-
-  private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_classroom
-    @classroom = Classroom.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def classroom_params
-    params.require(:classroom).permit(:name)
   end
 end

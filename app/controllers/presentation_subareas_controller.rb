@@ -1,4 +1,6 @@
 class PresentationSubareasController < ApplicationController
+  include PresentationSubareasHelper
+
   # GET /presentation_subareas
   def index
     @presentation_subareas = PresentationSubarea.all
@@ -7,7 +9,7 @@ class PresentationSubareasController < ApplicationController
 
   # GET /presentation_subareas/1
   def show
-    @presentations = Presentation.where(presentation_subarea_id: params[:id])
+    @presentations = Presentation.where(presentation_subarea_id: presentation_subarea_params[:id])
     render json: @presentations
   end
 end

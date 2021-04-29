@@ -19,6 +19,6 @@ module EventsHelper
   end
 
   def event_params
-    params.require(:event).permit(:date, :student_id, :presentation_id, :score)
+    params.permit(:id, :date, :student_id, :presentation_id, :score)
   end
 end

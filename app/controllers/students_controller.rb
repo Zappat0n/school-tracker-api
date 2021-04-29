@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  include StudentsHelper
   # GET /students
   def index
     @students = Student.all
@@ -7,7 +8,7 @@ class StudentsController < ApplicationController
 
   # GET /students/:id
   def show
-    @events = Event.for_student_sorted(params[:id])
+    @events = Event.for_student_sorted(student_params[:id])
     render json: @events
   end
 end
