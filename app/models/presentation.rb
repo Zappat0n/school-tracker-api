@@ -8,4 +8,5 @@ class Presentation < ApplicationRecord
   validates :year, presence: true
 
   scope :for_subarea, ->(subarea_id) { where(presentation_subarea_id: subarea_id) }
+  scope :between, ->(year1, year2) { where('year > ? AND year <= ?', year1, year2) }
 end

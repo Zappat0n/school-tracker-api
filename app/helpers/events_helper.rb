@@ -1,10 +1,11 @@
 module EventsHelper
   def build_events_for_classroom(classroom_id)
     years = get_years(classroom_id)
-    students = Student.where('classroom_id=?', classroom_id)
-    presentations = Presentation.where('year > ? AND year <= ?', years[0], years[1])
-    events = Event.for_classroom_between(classroom_id, years[0], years[1])
-    { students: students, presentations: presentations, events: events }
+    {
+      students: Student.for_classroom(classroom_id),
+      presentations: Presentation.between(years[0], years[1]),
+      events: Event.for_classroom_between(classroom_id, years[0], years[1])
+    }
   end
 
   def get_years(classroom)
