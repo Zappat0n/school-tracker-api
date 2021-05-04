@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users, param: :_username
+  resources :authentications, only: [:create]
+  resources :classrooms
+  resources :students, only: [:index, :show]
+  resources :presentation_areas, only: [:index, :show]
+  resources :presentation_subareas, only: [:index, :show]
+  resources :events, only: [:create, :update, :show]
 end

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  presentation_subarea: one
+  year: 1.5
+  priority: 1
+  nombre: MyString
+
+two:
+  name: MyString
+  presentation_subarea: two
+  year: 1.5
+  priority: 1
+  nombre: MyString
